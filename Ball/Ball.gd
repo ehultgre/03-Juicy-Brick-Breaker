@@ -17,10 +17,11 @@ func _physics_process(_delta):
 	
 	var bodies = get_colliding_bodies()
 	for body in bodies:
-		if body.get_parent().name =="Paddle Container":
+		if body.get_parent().name == "Paddle Container":
 			$AnimatedSprite.play("hit")
 			body.find_node("AnimatedSprite").play("hit")
-
+		if body.is_in_group("brick"):
+			body.damage(1)
 
 func _integrate_forces(state):
 	if abs(state.linear_velocity.x) < min_speed:

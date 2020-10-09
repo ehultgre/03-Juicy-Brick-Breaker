@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Paddle/Paddle_Container.gd" type="Script" id=1]
-[ext_resource path="res://Ball/Ball_Container.gd" type="Script" id=2]
+[ext_resource path="res://Levels/Ball_Container.gd" type="Script" id=2]
+[ext_resource path="res://Brick/Brick Container.gd" type="Script" id=3]
 
 [node name="Game" type="Node2D"]
 
@@ -9,6 +10,9 @@
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 0, 640, -0.697784, -3.21909, 1026.02, -1.09776, 1024, 640, 1152, 640, 1152, -128, -125, -125, -128, 640 )
+
+[node name="Brick Container" type="Node2D" parent="."]
+script = ExtResource( 3 )
 
 [node name="Paddle_Container" type="Node2D" parent="."]
 script = ExtResource( 1 )
