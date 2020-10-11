@@ -18,11 +18,11 @@ func set_strength(s):
 	strength = s
 	var x = strength * 100
 	$Sprite.region_rect = Rect2(x, 0, 100, 50)
-	points = strength * 100
+	points = strength*10 + 100
 
-func damage(d):
+func damage(_d):
 	set_strength(strength - 1)
-
+	Global.update_score(points)
 
 func die():
 	dying = true

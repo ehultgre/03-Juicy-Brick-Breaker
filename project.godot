@@ -19,6 +19,10 @@ config/name="03- Juicy- Brick- Breaker"
 run/main_scene="res://Levels/Level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://HUD/Global.gd"
+
 [input]
 
 Left={

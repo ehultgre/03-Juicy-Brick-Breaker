@@ -35,6 +35,7 @@ func _integrate_forces(state):
 
 
 func die():
+	Global.update_lives(-1)
 	queue_free()
 
 

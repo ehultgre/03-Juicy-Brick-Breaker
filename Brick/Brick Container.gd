@@ -22,6 +22,13 @@ var Levels = [
 		,[3,3,3,3,3,3,3]
 		,[2,2,2,2,2,2,2]
 	]
+	,[
+		[6,6,6,6,6,6,6]
+		,[5,5,5,5,5,5,5]
+		,[4,4,4,4,4,4,4]
+		,[3,3,3,3,3,3,3]
+		,[2,2,2,2,2,2,2]
+	]
 ]
 
 
@@ -31,13 +38,21 @@ func _ready():
 	start()
 
 
+func _physics_process(_delta):
+	if get_child_count() == 0:
+		Global.update_level(1)
+		if Global.level > Levels.size():
+			get_tree().change_scene("res://HUD/GameOver.tscn")
+		start()
+
+
 func start():
 	for c in get_children():
 		c.queue_free()
 		
-	var level = Levels[0]
+	var level = Levels[Global.level]
 	var startx = (VP.x / 2) - ((B.x) * (level[0].size()/2))
-	var starty = 50
+	var starty = 100
 	
 	for r in range(level.size()):
 		for c in range(level[r].size()):
