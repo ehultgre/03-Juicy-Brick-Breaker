@@ -9,7 +9,7 @@ A basic brick breaker featuring psychedelic themed sprites
 
 ## References
 
-sprites from https://gshelper.com/product/breakout-brick-breaker-game-tile-set-free/
+sprites from https://opengameart.org/content/psychedelic-colourful-arkanoid-assets
 
 ## Future Development
 
